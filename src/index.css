@@ -1,0 +1,52 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  /* Primary */
+  --color-blue-200: hsl(193, 38%, 86%);
+  --color-green-300: hsl(150, 100%, 66%);
+
+  /* Neutral */
+  --color-blue-600: hsl(217, 19%, 38%);
+  --color-blue-900: hsl(217, 19%, 24%);
+  --color-blue-950: hsl(218, 23%, 16%);
+
+  /* Typography */
+  --font-sans: "Manrope", system-ui, sans-serif;
+  --text-quote: 1.75rem; /* 28px */
+  --text-quote--line-height: 1.45;
+}
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  #root {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+  }
+
+  body {
+    min-height: 100dvh;
+    background-color: var(--color-blue-950);
+    color: var(--color-blue-200);
+    font-family: var(--font-sans);
+    font-weight: 800;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media (width < 640px) {
+    :root {
+      --text-quote: 1.5rem;
+      --text-quote--line-height: 1.4;
+    }
+  }
+}

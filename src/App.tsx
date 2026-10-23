@@ -7,7 +7,7 @@ import { SlipCard } from './components/slip-card';
 function App() {
   const [slip, setSlip] = useState<Slip | null>(null);
   const [hasError, setHasError] = useState<boolean>(false);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(true);
 
 
   const fetchAdvice = useCallback(async () => {

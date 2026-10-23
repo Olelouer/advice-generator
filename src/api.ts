@@ -1,9 +1,9 @@
 import { z } from "zod";
-import { SlipSchema } from "./types/slip-types";
+import { SlipSchema, type Slip } from "./types/slip-types";
 
 const apiUrl = "https://api.adviceslip.com/advice";
 
-export const getRandomAdvice = async () => {
+export const getRandomAdvice = async (): Promise<Slip | null> => {
     try {
         const response = await fetch(apiUrl, { cache: "no-store" });
         if(!response.ok) {
